@@ -6,7 +6,8 @@ const Layout = () => {
     <div className="layout-wrapper">
       <img className="tagline" src={Tagline} />
       <div className="content-box">
-        <h2>Play golf</h2>
+        <h3>Come Play the Areas Most Amazing Golf Course Today!</h3>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque ea inventore enim, fugiat, voluptate maxime consequatur animi quia rerum velit soluta quasi repellat nemo saepe molestias quos. Temporibus, expedita labore.</p>
       </div>
     </div>
     
