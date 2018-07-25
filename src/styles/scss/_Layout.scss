@@ -1,25 +1,89 @@
 .layout-wrapper {
   width: 100%;
   position: relative;
-  top: 131px;
-  margin: 0 auto;
+  top: 75px;
+  margin: 0 auto 4rem;
   display: block;
+
+  @include mq(tablet) {
+    top: 131px;
+    margin: 0 auto 3rem;
+  }
+
+  .row {
+    position: relative;
+  }
 
   .tagline {
     display: block;
-    width: 650px;
-    margin: 0 auto 1.75rem;
+    //width: 650px;
+    margin: 0 auto 1.25rem;
+
+    @include mq(tablet) {
+      margin: 0 auto 1.75rem;
+    }
   }
-  .content-box {
-    background: url(../../images/content-box.jpg) no-repeat;
+
+  .frame {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
     width: 835px;
     height: 404px;
+
+    &:before {
+      content: "";
+      display: block;
+      height: 20px;
+      width: 100%;
+    }
+
+    &:after {
+      content: "";
+      display: block;
+      height: 20px;
+      width: 100%;
+    }
+  }
+  
+  .content-box {
+    background: #fff;
+    width: 100%;
     margin: 0 auto;
     font-family: "Gill Sans", sans-serif;
     font-size: 1rem;
     padding: 0.5rem 2rem;
     box-sizing: border-box;
     font-weight: 100;
+    overflow: hidden;
+    box-sizing: border-box;
+
+    @include mq(tablet) {
+      width: 700px;
+      height: 339px;
+      background: url(../../images/content-box.jpg) no-repeat;
+      background-size: cover;      
+    }
+
+    @include mq(desktop) {
+      width: 835px;
+      height: 404px;
+    }
+
+    .content-box-viewport {
+      overflow-y: scroll;
+      width: 103%;
+      height: 98%;
+      position: relative;
+      top: 1%;
+      padding-right: 3%;
+      box-sizing: border-box;
+
+      a {
+        font-weight: 100;
+      }
+    }
 
     h3 {
       font-size: 1.5rem;
@@ -30,6 +94,8 @@
       width: 100%;
       display: inline-block;
       margin-bottom: 0;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #ccc;
       
       &:before {
         content: url(../../images/pin-icon.png);
@@ -39,6 +105,118 @@
         position: relative;
         top: 1px;
         right: 12px;
+      }
+    }
+
+    ul {
+      display: flex;
+      flex-flow: column wrap;
+      list-style: none;
+      justify-content: space-between;
+
+      @include mq(tablet) {
+        flex-flow: row wrap;
+      }
+    }
+
+    li {
+      width: 244px;
+      height: 161px;
+      flex: 0 auto;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.25s ease-out;
+      cursor: pointer;
+      overflow: hidden;
+      position: relative;
+      margin: 0 auto 1rem;
+
+      @include mq(tablet) {
+        margin: 0;
+        width: 200px;
+        height: 132px;
+      }
+
+      @include mq(desktop) {
+        width: 244px;
+        height: 161px;
+      }
+
+      span {
+        background-size: 100%;
+        transform: scale(1);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transition: all 0.25s ease-out;
+      }
+
+      &:nth-child(1) {
+        span {
+          background: url(../../images/book-now.jpg) 50% 50% no-repeat;
+        }
+
+        &:hover {
+          span {
+            background: url(../../images/book-now-color.jpg) 50% 50% no-repeat;
+            transform: scale(1.25);
+          }
+
+          p {
+            transform: scale(1.1);
+          }
+        }
+      }
+
+      &:nth-child(2) {
+        span {
+          background: url(../../images/see-course.jpg) 50% 50% no-repeat;
+        }
+
+        &:hover {
+          span {
+            background: url(../../images/see-course-color.jpg) 50% 50% no-repeat;
+            transform: scale(1.25);
+          }
+
+          p {
+            transform: scale(1.1);
+          }
+        }
+      }
+
+      &:nth-child(3) {
+        span {
+          background: url(../../images/become-member.jpg) 50% 50% no-repeat;
+        }
+
+        &:hover {
+          span {
+            background: url(../../images/become-member-color.jpg) 50% 50% no-repeat;
+            transform: scale(1.25);
+          }
+
+          p {
+            transform: scale(1.1);
+          }
+        }
+      }
+
+      p {
+        color: #fff;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-weight: 400;
+        font-size: 1rem;
+        line-height: 1.25;
+        align-self: center;
+        transform: scale(1);
+        transform-origin: 50% 50%;
+        transition: all 0.25s ease-out;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.75);
       }
     }
   }

@@ -1,0 +1,25 @@
+@mixin mq($point) {
+  @if ($mq) {
+      @include bp($point) {@content;}
+  } @else {
+      @content;
+  }
+}
+
+@mixin bp($point) {
+  @if ($point == large) {
+      @media (min-width: 72em) { @content; }
+  } 
+  @if ($point == desktop) {
+      @media (min-width: 60em) { @content; }
+  } 
+  @if ($point == tablet) {
+      @media (min-width: 48em) { @content; }
+  } 
+  @if ($point == smt) {
+      @media (min-width: 32em) and (max-width: 59.9999em) { @content; }
+  } 
+  @if ($point == mobile) {
+      @media (max-width: 47.9375em) { @content; }
+  }
+}

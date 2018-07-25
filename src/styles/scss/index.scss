@@ -1,10 +1,7 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-  font-size: 16px;
-}
 
-@import "NavBar",
+
+@import "global/index.scss",
+"Main",
+"NavBar",
 "Layout",
 "Footer";

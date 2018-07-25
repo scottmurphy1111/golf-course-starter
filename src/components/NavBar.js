@@ -30,11 +30,16 @@ class NavBar extends Component {
 
     return (
       <div id="navbar">
-        {/* <img id="logo" src={GolfballImage} /> */}
-        <h1>Golf Course Starter</h1>
-        <ul>
-          {lis}
-        </ul>
+        <div className="container">
+          <div className="row">
+            <div className="col-xs-12">
+              <h1>Golf Course Starter</h1>
+              <ul>
+                {lis}
+              </ul>
+            </div>
+          </div>
+        </div>
       </div >
     )
   }

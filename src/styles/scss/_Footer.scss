@@ -1,8 +1,69 @@
-.footer {
-  position: fixed;
+#footer {
+  position: relative;
+  z-index: 10;
   bottom: 0;
   width: 100%;
-  height: 46px;
+  height: 199px;
   display: block;
   background: #414a4f;
+  background: -moz-linear-gradient(top, #4C555B 0%, #414a4f 8%, #414a4f 78%, #343b3f 100%);
+  background: -webkit-linear-gradient(top, #4C555B 0%,#414a4f 8%,#414a4f 78%,#343b3f 100%);
+  background: linear-gradient(to bottom, #4C555B 0%,#414a4f 8%,#414a4f 78%,#343b3f 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4C555B', endColorstr='#343b3f',GradientType=0 );
+
+  @include mq(tablet) {
+    position: fixed;
+    height: 92px;
+  }
+
+  @include mq(desktop) {
+    height: 46px;
+  }
+
+  .container {
+    padding: 0.25rem;
+    box-sizing: border-box;
+    margin: 0 auto;
+
+    @include mq(tablet) {
+      padding: 0 3rem;
+    }
+  }
+
+  .column {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+  }
+
+  span, .social-icons {
+    flex-direction: row;
+    flex: 1 auto;
+    text-align: center;
+    margin-top: 0.8rem;
+  }
+
+  ul {
+    padding-left: 0;
+    
+    list-style: none;
+    width: 100%;
+
+    li {
+      flex-direction: row;
+      flex: 1 auto;
+      text-align: center;
+      margin-top: 0.8rem;    
+    }
+  }
+
+  span, li {
+    a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 100;
+      text-shadow: 0px 1px 0px #454545, 0px -1px 0px #000, 1px 0px 0px #454545, -1px 0px 0px #000;
+
+    }
+  }
 }
